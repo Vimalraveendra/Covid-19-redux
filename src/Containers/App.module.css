@@ -16,3 +16,14 @@
 .App-link {
   color: #61dafb;
 }
+
+hr {
+  width: 26%;
+  margin-top: 0;
+  border: 0;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+}
+
+hr:hover {
+  border-bottom: 3px solid rgba(0, 0, 0, 1);
+}

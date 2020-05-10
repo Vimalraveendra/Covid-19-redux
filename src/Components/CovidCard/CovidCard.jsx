@@ -4,8 +4,6 @@ import CountUp from "react-countup";
 import cx from "classnames";
 
 const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
-  console.log("confirm", confirmed);
-  console.log("confirm", lastUpdate);
   if (!confirmed) {
     return "Loading...";
   }
