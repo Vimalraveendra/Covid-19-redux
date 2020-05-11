@@ -1,5 +1,21 @@
 .piechart {
+  display: flex;
+  justify-content: center;
   width: 80%;
-  margin: 30px 0px 0px 120px;
+  margin: 20px 0;
   cursor: pointer;
+}
+
+@media (max-width: 870px) {
+  canvas {
+    width: 1000px !important;
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 440px) {
+  canvas {
+    width: 600px !important;
+    height: 300px !important;
+  }
 }

@@ -48,7 +48,7 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
             className={styles.count}
           />
           <h4>{new Date(lastUpdate).toDateString()}</h4>
-          <p>Total number of deaths caused by COVID-19</p>
+          <p>Total number of deaths cases caused by COVID-19</p>
         </div>
       </div>
     </div>

@@ -27,9 +27,13 @@ class App extends React.Component {
   }
   render() {
     const { data, country } = this.state;
-    return (
+    return !data ? (
+      <div>
+        <h2>Loading...</h2>
+      </div>
+    ) : (
       <div className={styles.App}>
-        <h1>Covid -19</h1>
+        <h1>COVID-19</h1>
         <CountrySelector handleCountry={this.handleCountry} />
         <hr />
         <CovidCard data={data} />

@@ -3,20 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 80%;
   font-family: "Open Sans", sans-serif;
 }
 
 .card {
   margin: 2%;
   border-radius: 5px;
-  width: 18rem;
+  width: 30vw;
   padding-bottom: 15px;
   background-color: white;
 }
 .content {
-  width: 80%;
-  margin: 5px 0;
-  margin-left: 30px;
+  margin: 5px 10px;
 }
 
 .infected {
@@ -62,4 +61,15 @@
 }
 h4 {
   color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 870px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+  .card {
+    width: 80vw;
+    margin: 5%;
+  }
 }

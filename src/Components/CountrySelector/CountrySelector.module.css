@@ -1,9 +1,25 @@
+.container {
+  width: 80%;
+}
+
 .selector {
   background: none;
-  width: 25vw;
-  height: 3vw;
+  width: 20vw;
   border: 0;
   font-size: 1rem;
   box-sizing: content-box;
   outline: none;
+  margin-top: 10px;
+}
+@media (max-width: 870px) {
+  .selector {
+    margin-bottom: 5px;
+    width: 40vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .selector {
+    width: 60vw;
+  }
 }
