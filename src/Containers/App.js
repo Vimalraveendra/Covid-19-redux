@@ -20,19 +20,20 @@ class App extends React.Component {
 
   fetchDataAPI = async (country) => {
     const fetchedData = await fetchData(country);
-    this.setState({ data: fetchedData });
+    this.setState({ data: fetchedData, country: country });
   };
   componentDidMount() {
     this.fetchDataAPI();
   }
   render() {
+    const { data, country } = this.state;
     return (
       <div className={styles.App}>
         <h1>Covid -19</h1>
         <CountrySelector handleCountry={this.handleCountry} />
         <hr />
-        <CovidCard data={this.state.data} />
-        <PieChart data={this.state.data} />
+        <CovidCard data={data} />
+        <PieChart data={data} country={country} />
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
+import styles from "./PieChart.module.css";
 
-const PieChart = ({ data: { confirmed, recovered, deaths } }) => {
-  console.log("confirmed", confirmed);
+const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const pieChart = confirmed ? (
     <Pie
       data={{
@@ -21,11 +21,17 @@ const PieChart = ({ data: { confirmed, recovered, deaths } }) => {
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current status in ` },
+        title: {
+          display: true,
+          text:
+            `${country}` === "undefined" || `${country}`.length === 0
+              ? `Current status in the World`
+              : `Current status in ${country}`,
+        },
       }}
     />
   ) : null;
-  return <div>{pieChart}</div>;
+  return <div className={styles.piechart}>{pieChart}</div>;
 };
 
 export default PieChart;
