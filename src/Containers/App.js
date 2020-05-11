@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./App.module.css";
 import CountrySelector from "../Components/CountrySelector/CountrySelector";
 import CovidCard from "../Components/CovidCard/CovidCard";
-import BarChart from "../Components/BarChart/BarChart";
+import PieChart from "../Components/PieChart/PieChart";
 
 import { fetchData } from "../Api/Api";
 
@@ -32,7 +32,7 @@ class App extends React.Component {
         <CountrySelector handleCountry={this.handleCountry} />
         <hr />
         <CovidCard data={this.state.data} />
-        <BarChart />
+        <PieChart data={this.state.data} />
       </div>
     );
   }

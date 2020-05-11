@@ -17,7 +17,6 @@ export const fetchData = async (country) => {
       recovered,
       lastUpdate,
     };
-    console.log("modi", modifiedData);
     return modifiedData;
   } catch (error) {
     console.log(error);
