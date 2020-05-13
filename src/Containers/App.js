@@ -5,7 +5,9 @@ import CountrySelector from "../Components/CountrySelector/CountrySelector";
 import CovidCard from "../Components/CovidCard/CovidCard";
 import PieChart from "../Components/PieChart/PieChart";
 
+import { connect } from "react-redux";
 import { fetchData } from "../Api/Api";
+import { fetchedData } from "../Redux/CovidCard/CovidCard.actions";
 
 class App extends React.Component {
   state = {
@@ -23,7 +25,7 @@ class App extends React.Component {
     this.setState({ data: fetchedData, country: country });
   };
   componentDidMount() {
-    this.fetchDataAPI();
+    this.props.fetchDataAPI();
   }
   render() {
     const { data, country } = this.state;
@@ -43,4 +45,12 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  data: state.data.data,
+  country: state.countries.country,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchDataAPI: () => dispatch(fetchedData()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);
