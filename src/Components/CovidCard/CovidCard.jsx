@@ -3,6 +3,8 @@ import styles from "./CovidCard.module.css";
 import CountUp from "react-countup";
 import cx from "classnames";
 
+import { connect } from "react-redux";
+
 const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
   if (!confirmed) {
     return "Loading...";
@@ -55,4 +57,7 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
   );
 };
 
-export default CovidCard;
+const mapStateToPros = ({ data: { data } }) => ({
+  data,
+});
+export default connect(mapStateToPros)(CovidCard);
