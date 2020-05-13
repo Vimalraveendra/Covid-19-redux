@@ -38,7 +38,7 @@ class App extends React.Component {
         <h1>COVID-19</h1>
         <CountrySelector handleCountry={this.handleCountry} />
         <hr />
-        <CovidCard data={data} />
+        <CovidCard />
         <PieChart data={data} country={country} />
       </div>
     );

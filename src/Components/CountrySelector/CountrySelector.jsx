@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import styles from "./CountrySelector.module.css";
 import cx from "classnames";
 
+import { connect } from "react-redux";
+import { handleCountry } from "../../Redux/CountrySelector/CountrySelector.actions";
+
 import { fetchCountryData } from "../../Api/Api";
+import {
+  countrySelectorReducer,
+  initialState,
+} from "../../Redux/CountrySelector/CountrySelector.reducer";
 
 const CountrySelector = ({ handleCountry }) => {
   const [selectedCountries, setSelectedCountries] = useState([]);
+  const [state, dispatch] = useReducer(countrySelectorReducer, initialState);
 
   useEffect(() => {
     const fetchedCountries = async () => {
@@ -33,4 +41,8 @@ const CountrySelector = ({ handleCountry }) => {
   );
 };
 
-export default CountrySelector;
+const mapDispatchToProps = (dispatch) => ({
+  handleCountry: (e) => dispatch(handleCountry(e.target.value)),
+});
+
+export default connect(null, mapDispatchToProps)(CountrySelector);

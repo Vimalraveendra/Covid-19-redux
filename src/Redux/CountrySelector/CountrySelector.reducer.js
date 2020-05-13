@@ -1,6 +1,6 @@
 import { CountrySelectorActionTypes } from "./CountrySelector.types";
 
-const initialState = {
+export const initialState = {
   country: "",
   selectedCountries: [],
   isPending: false,
