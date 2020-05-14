@@ -3,11 +3,11 @@ import styles from "./CountrySelector.module.css";
 import cx from "classnames";
 
 import { connect } from "react-redux";
+import { fetchedCountries } from "../../Redux/CountrySelector/CountrySelector.actions";
 import {
+  fetchedData,
   handleCountry,
-  fetchedCountries,
-} from "../../Redux/CountrySelector/CountrySelector.actions";
-import { fetchedData } from "../../Redux/CovidCard/CovidCard.actions";
+} from "../../Redux/CovidCard/CovidCard.actions";
 
 class CountrySelector extends React.Component {
   componentDidMount() {
@@ -44,7 +44,10 @@ class CountrySelector extends React.Component {
   }
 }
 
-const mapStateToProps = ({ countries: { selectedCountries, country } }) => ({
+const mapStateToProps = ({
+  countries: { selectedCountries },
+  data: { country },
+}) => ({
   selectedCountries,
   country,
 });

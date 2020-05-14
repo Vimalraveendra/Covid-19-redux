@@ -11,7 +11,7 @@ import { fetchedData } from "../Redux/CovidCard/CovidCard.actions";
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.fetchDataAPI();
+    this.props.fetchDataAPI(this.props.country);
   }
 
   render() {
@@ -32,12 +32,13 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ data: { data } }) => ({
+const mapStateToProps = ({ data: { data, country } }) => ({
   data,
+  country,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchDataAPI: () => dispatch(fetchedData()),
+  fetchDataAPI: (country) => dispatch(fetchedData(country)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
