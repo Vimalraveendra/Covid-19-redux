@@ -27,7 +27,7 @@ class CountrySelector extends React.Component {
           className={cx(styles.selector, styles.option)}
           onChange={(e) => {
             handleCountry(e);
-            fetchedData(country);
+            fetchedData(e.target.value);
           }}
         >
           <option className={styles.option} value="">
