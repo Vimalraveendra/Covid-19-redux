@@ -2,6 +2,8 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 import styles from "./PieChart.module.css";
 
+import { connect } from "react-redux";
+
 const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const pieChart = confirmed ? (
     <Pie
@@ -34,4 +36,8 @@ const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   return <div className={styles.piechart}>{pieChart}</div>;
 };
 
-export default PieChart;
+const mapStateToProps = ({ data: { data }, countries: { country } }) => ({
+  data,
+  country,
+});
+export default connect(mapStateToProps)(PieChart);
