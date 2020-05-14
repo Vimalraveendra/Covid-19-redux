@@ -6,29 +6,16 @@ import CovidCard from "../Components/CovidCard/CovidCard";
 import PieChart from "../Components/PieChart/PieChart";
 
 import { connect } from "react-redux";
-import { fetchData } from "../Api/Api";
+
 import { fetchedData } from "../Redux/CovidCard/CovidCard.actions";
 
 class App extends React.Component {
-  state = {
-    data: {},
-    country: "",
-  };
-
-  handleCountry = (e) => {
-    const country = e.target.value;
-    this.fetchDataAPI(country);
-  };
-
-  fetchDataAPI = async (country) => {
-    const fetchedData = await fetchData(country);
-    this.setState({ data: fetchedData, country: country });
-  };
   componentDidMount() {
     this.props.fetchDataAPI();
   }
+
   render() {
-    const { data, country } = this.state;
+    const { data } = this.props;
     return !data ? (
       <div>
         <h2>Loading...</h2>
@@ -36,21 +23,21 @@ class App extends React.Component {
     ) : (
       <div className={styles.App}>
         <h1>COVID-19</h1>
-        <CountrySelector handleCountry={this.handleCountry} />
+        <CountrySelector />
         <hr />
         <CovidCard />
-        <PieChart data={data} country={country} />
+        <PieChart />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
-  data: state.data.data,
-  country: state.countries.country,
+const mapStateToProps = ({ data: { data } }) => ({
+  data,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   fetchDataAPI: () => dispatch(fetchedData()),
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

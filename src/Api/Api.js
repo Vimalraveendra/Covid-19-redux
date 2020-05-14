@@ -3,6 +3,7 @@ import axios from "axios";
 const url = "https://covid19.mathdro.id/api";
 
 export const fetchData = async (country) => {
+  console.log("hell", country);
   let changeableUrl = url;
   if (country) {
     changeableUrl = `${url}/countries/${country}`;
@@ -11,6 +12,7 @@ export const fetchData = async (country) => {
     const {
       data: { confirmed, deaths, recovered, lastUpdate },
     } = await axios.get(changeableUrl);
+
     const modifiedData = {
       confirmed,
       deaths,

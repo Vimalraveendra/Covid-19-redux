@@ -1,7 +1,6 @@
 import { CountrySelectorActionTypes } from "./CountrySelector.types";
 
 export const initialState = {
-  country: "",
   selectedCountries: [],
   isPending: false,
   error: "",
@@ -29,11 +28,6 @@ export const countrySelectorReducer = (state = initialState, action = {}) => {
         error: action.payload,
       };
 
-    case CountrySelectorActionTypes.HANDLE_COUNTRY_CHANGE:
-      return {
-        ...state,
-        country: action.payload,
-      };
     default:
       return state;
   }

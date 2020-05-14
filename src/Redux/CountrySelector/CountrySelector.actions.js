@@ -12,13 +12,10 @@ export const fetchedCountriesPending = () => ({
 });
 
 // fetching of country data success
-export const fetchedCountriesSuccess = (data) => {
-  console.log("data", data);
-  return {
-    type: CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_SUCCESS,
-    payload: data,
-  };
-};
+export const fetchedCountriesSuccess = (data) => ({
+  type: CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_SUCCESS,
+  payload: data,
+});
 
 // fetching of country data failed
 export const fetchedCountriesFailed = (error) => ({

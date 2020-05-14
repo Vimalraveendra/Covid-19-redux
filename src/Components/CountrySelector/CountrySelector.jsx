@@ -7,18 +7,28 @@ import {
   handleCountry,
   fetchedCountries,
 } from "../../Redux/CountrySelector/CountrySelector.actions";
+import { fetchedData } from "../../Redux/CovidCard/CovidCard.actions";
 
 class CountrySelector extends React.Component {
   componentDidMount() {
-    this.props.fetchedCountries(this.props.country);
+    this.props.fetchedCountries();
   }
   render() {
-    const { handleCountry, selectedCountries } = this.props;
+    const {
+      handleCountry,
+      selectedCountries,
+      country,
+      fetchedData,
+    } = this.props;
+    console.log("#Country", country);
     return (
       <div className={styles.container}>
         <select
           className={cx(styles.selector, styles.option)}
-          onChange={handleCountry}
+          onChange={(e) => {
+            handleCountry(e);
+            fetchedData(country);
+          }}
         >
           <option className={styles.option} value="">
             Select Country
@@ -40,7 +50,8 @@ const mapStateToProps = ({ countries: { selectedCountries, country } }) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   handleCountry: (e) => dispatch(handleCountry(e.target.value)),
-  fetchedCountries: (country) => dispatch(fetchedCountries(country)),
+  fetchedCountries: () => dispatch(fetchedCountries()),
+  fetchedData: (country) => dispatch(fetchedData(country)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountrySelector);
