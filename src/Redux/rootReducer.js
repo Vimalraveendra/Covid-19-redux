@@ -4,5 +4,5 @@ import { covidCardReducer } from "./CovidCard/CovidCard.reducer";
 
 export default combineReducers({
   countries: countrySelectorReducer,
-  data: covidCardReducer,
+  dataArray: covidCardReducer,
 });
