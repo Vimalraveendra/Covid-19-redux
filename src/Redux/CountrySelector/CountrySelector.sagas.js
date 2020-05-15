@@ -15,14 +15,14 @@ export function* fetchCountriesStartAsync() {
     // oR
     //const response = yield fetchData() avoid using call effects
     // put affect is used to dispatch actions to reducer
-    put(fetchedCountrySuccess(response));
+    yield put(fetchedCountrySuccess(response));
   } catch (error) {
-    put(fetchedCountryFailed(error));
+    yield put(fetchedCountryFailed(error));
   }
 }
 export function* fetchedCountries() {
   yield takeLatest(
-    CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_PENDING,
+    CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_START,
     fetchCountriesStartAsync
   );
 }
