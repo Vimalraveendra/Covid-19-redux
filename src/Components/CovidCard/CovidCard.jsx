@@ -6,6 +6,7 @@ import cx from "classnames";
 import { connect } from "react-redux";
 
 const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
+  console.log("I am covidCard fired");
   if (!confirmed) {
     return "Loading...";
   }

@@ -4,7 +4,6 @@ const initialState = {
   data: {},
   isPending: false,
   error: "",
-  country: "",
 };
 
 export const covidCardReducer = (state = initialState, action = {}) => {
@@ -27,11 +26,6 @@ export const covidCardReducer = (state = initialState, action = {}) => {
         error: action.payload,
       };
 
-    case CovidCardActionTypes.HANDLE_COUNTRY_CHANGE:
-      return {
-        ...state,
-        country: action.payload,
-      };
     default:
       return state;
   }

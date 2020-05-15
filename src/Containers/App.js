@@ -8,6 +8,7 @@ import PieChart from "../Components/PieChart/PieChart";
 import { connect } from "react-redux";
 
 import { fetchedData } from "../Redux/CovidCard/CovidCard.actions";
+import { fetchedCountries } from "../Redux/CountrySelector/CountrySelector.actions";
 
 class App extends React.Component {
   componentDidMount() {
@@ -15,6 +16,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("I am App fired");
     const { data } = this.props;
     return !data ? (
       <div>
@@ -38,6 +40,7 @@ const mapStateToProps = ({ data: { data } }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchDataAPI: () => dispatch(fetchedData()),
+  fetchedCountries: () => dispatch(fetchedCountries()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

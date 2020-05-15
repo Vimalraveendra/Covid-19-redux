@@ -14,6 +14,7 @@ class CountrySelector extends React.Component {
     this.props.fetchedCountries();
   }
   render() {
+    console.log("I am countrySelector fired");
     const {
       handleCountry,
       selectedCountries,

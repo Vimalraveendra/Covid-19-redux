@@ -5,6 +5,7 @@ import styles from "./PieChart.module.css";
 import { connect } from "react-redux";
 
 const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
+  console.log("I am piechart fired");
   const pieChart = confirmed ? (
     <Pie
       data={{

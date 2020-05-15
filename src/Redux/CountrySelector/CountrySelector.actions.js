@@ -1,6 +1,11 @@
 import { CountrySelectorActionTypes } from "./CountrySelector.types";
 import { fetchCountryData } from "../../Api/Api";
 
+// fetching the country name whenever the user changes
+export const handleCountry = (event) => ({
+  type: CountrySelectorActionTypes.HANDLE_COUNTRY_CHANGE,
+  payload: event,
+});
 // fetching of country data started
 export const fetchedCountriesPending = () => ({
   type: CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_PENDING,
