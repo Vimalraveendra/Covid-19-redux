@@ -45,10 +45,7 @@ class CountrySelector extends React.Component {
   }
 }
 
-const mapStateToProps = ({
-  countries: { selectedCountries },
-  data: { country },
-}) => ({
+const mapStateToProps = ({ countries: { selectedCountries, country } }) => ({
   selectedCountries,
   country,
 });
