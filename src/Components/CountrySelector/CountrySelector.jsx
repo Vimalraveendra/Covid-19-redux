@@ -9,6 +9,12 @@ import {
   handleCountry,
 } from "../../Redux/CovidCard/CovidCard.actions";
 
+import { createStructuredSelector } from "reselect";
+import {
+  selectSelectedCountries,
+  selectCountry,
+} from "../../Redux/CountrySelector/countrySelector.selector";
+
 class CountrySelector extends React.Component {
   componentDidMount() {
     this.props.fetchedCountries();
@@ -45,9 +51,9 @@ class CountrySelector extends React.Component {
   }
 }
 
-const mapStateToProps = ({ countries: { selectedCountries, country } }) => ({
-  selectedCountries,
-  country,
+const mapStateToProps = createStructuredSelector({
+  selectedCountries: selectSelectedCountries,
+  country: selectCountry,
 });
 const mapDispatchToProps = (dispatch) => ({
   handleCountry: (e) => dispatch(handleCountry(e.target.value)),

@@ -8,6 +8,8 @@ import PieChart from "../Components/PieChart/PieChart";
 import { connect } from "react-redux";
 
 import { fetchedData } from "../Redux/CovidCard/CovidCard.actions";
+import { createStructuredSelector } from "reselect";
+import { selectDataArray } from "../Redux/CovidCard/CovidCard.selector";
 
 class App extends React.Component {
   componentDidMount() {
@@ -33,8 +35,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ data: { data } }) => ({
-  data,
+const mapStateToProps = createStructuredSelector({
+  data: selectDataArray,
 });
 
 const mapDispatchToProps = (dispatch) => ({
