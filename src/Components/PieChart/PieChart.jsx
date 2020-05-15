@@ -4,8 +4,11 @@ import styles from "./PieChart.module.css";
 
 import { connect } from "react-redux";
 
+import { createStructuredSelector } from "reselect";
+import { selectDataArray } from "../../Redux/CovidCard/CovidCard.selector";
+import { selectCountry } from "../../Redux/CountrySelector/countrySelector.selector";
+
 const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
-  console.log("I am piechart fired");
   const pieChart = confirmed ? (
     <Pie
       data={{
@@ -37,8 +40,8 @@ const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   return <div className={styles.piechart}>{pieChart}</div>;
 };
 
-const mapStateToProps = ({ data: { data }, countries: { country } }) => ({
-  data,
-  country,
+const mapStateToProps = createStructuredSelector({
+  data: selectDataArray,
+  country: selectCountry,
 });
 export default connect(mapStateToProps)(PieChart);

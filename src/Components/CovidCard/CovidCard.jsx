@@ -5,8 +5,10 @@ import cx from "classnames";
 
 import { connect } from "react-redux";
 
+import { createStructuredSelector } from "reselect";
+import { selectDataArray } from "../../Redux/CovidCard/CovidCard.selector";
+
 const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
-  console.log("I am covidCard fired");
   if (!confirmed) {
     return "Loading...";
   }
@@ -58,7 +60,7 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
   );
 };
 
-const mapStateToPros = ({ data: { data } }) => ({
-  data,
+const mapStateToPros = createStructuredSelector({
+  data: selectDataArray,
 });
 export default connect(mapStateToPros)(CovidCard);

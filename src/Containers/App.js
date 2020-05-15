@@ -17,7 +17,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("I am App fired");
     const { data } = this.props;
     return !data ? (
       <div>

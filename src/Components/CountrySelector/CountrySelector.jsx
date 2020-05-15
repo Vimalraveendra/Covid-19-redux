@@ -20,14 +20,8 @@ class CountrySelector extends React.Component {
     this.props.fetchedCountries();
   }
   render() {
-    console.log("I am countrySelector fired");
-    const {
-      handleCountry,
-      selectedCountries,
-      country,
-      fetchedData,
-    } = this.props;
-    console.log("#Country", country);
+    const { handleCountry, selectedCountries, fetchedData } = this.props;
+
     return (
       <div className={styles.container}>
         <select
@@ -55,6 +49,7 @@ const mapStateToProps = createStructuredSelector({
   selectedCountries: selectSelectedCountries,
   country: selectCountry,
 });
+
 const mapDispatchToProps = (dispatch) => ({
   handleCountry: (e) => dispatch(handleCountry(e.target.value)),
   fetchedCountries: () => dispatch(fetchedCountries()),
