@@ -37,7 +37,7 @@ const PieChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   return <div className={styles.piechart}>{pieChart}</div>;
 };
 
-const mapStateToProps = ({ data: { data, country } }) => ({
+const mapStateToProps = ({ data: { data }, countries: { country } }) => ({
   data,
   country,
 });
