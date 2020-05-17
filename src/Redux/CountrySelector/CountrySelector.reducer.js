@@ -1,4 +1,4 @@
-import { CountrySelectorActionTypes } from "./CountrySelector.types";
+import CountrySelectorActionTypes from "./CountrySelector.types";
 
 export const initialState = {
   selectedCountries: [],
@@ -9,7 +9,7 @@ export const initialState = {
 
 export const countrySelectorReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_PENDING:
+    case CountrySelectorActionTypes.REQUEST_COUNTRY_DATA_START:
       return {
         ...state,
         isPending: true,

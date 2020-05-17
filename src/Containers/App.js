@@ -7,13 +7,14 @@ import PieChart from "../Components/PieChart/PieChart";
 
 import { connect } from "react-redux";
 
-import { fetchedData } from "../Redux/CovidCard/CovidCard.actions";
+import { fetchedDataStart } from "../Redux/CovidCard/CovidCard.actions";
 import { createStructuredSelector } from "reselect";
 import { selectDataArray } from "../Redux/CovidCard/CovidCard.selector";
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.fetchDataAPI();
+    const { fetchDataAPI } = this.props;
+    fetchDataAPI();
   }
 
   render() {
@@ -39,7 +40,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchDataAPI: () => dispatch(fetchedData()),
+  fetchDataAPI: () => dispatch(fetchedDataStart()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,4 +1,4 @@
-import { CountrySelectorActionTypes } from "./CountrySelector.types";
+import CountrySelectorActionTypes from "./CountrySelector.types";
 // import { fetchCountryData } from "../../Api/Api";
 // fetching the country name whenever the user changes
 
@@ -31,7 +31,7 @@ export const fetchedCountriesFailed = (error) => ({
 //in our case the action is REQUEST_COUNTRY_DATA_PENDING & so on
 
 // export const fetchedCountries = () => async (dispatch) => {
-//   dispatch(fetchedCountriesPending());
+//   dispatch(fetchedCountriesStart());
 //   try {
 //     const response = await fetchCountryData();
 //     dispatch(fetchedCountriesSuccess(response));

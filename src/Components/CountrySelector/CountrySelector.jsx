@@ -3,11 +3,10 @@ import styles from "./CountrySelector.module.css";
 import cx from "classnames";
 
 import { connect } from "react-redux";
-import { fetchedCountries } from "../../Redux/CountrySelector/CountrySelector.actions";
-import {
-  fetchedData,
-  handleCountry,
-} from "../../Redux/CovidCard/CovidCard.actions";
+import { fetchedCountriesStart } from "../../Redux/CountrySelector/CountrySelector.actions";
+
+import { handleCountry } from "../../Redux/CountrySelector/CountrySelector.actions";
+import { fetchedDataStart } from "../../Redux/CovidCard/CovidCard.actions";
 
 import { createStructuredSelector } from "reselect";
 import {
@@ -52,8 +51,8 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
   handleCountry: (e) => dispatch(handleCountry(e.target.value)),
-  fetchedCountries: () => dispatch(fetchedCountries()),
-  fetchedData: (country) => dispatch(fetchedData(country)),
+  fetchedCountries: () => dispatch(fetchedCountriesStart()),
+  fetchedData: (country) => dispatch(fetchedDataStart(country)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountrySelector);

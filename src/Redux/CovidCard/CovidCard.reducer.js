@@ -1,4 +1,4 @@
-import { CovidCardActionTypes } from "./CovidCard.types";
+import CovidCardActionTypes from "./CovidCard.types";
 
 const initialState = {
   data: {},
@@ -8,7 +8,7 @@ const initialState = {
 
 export const covidCardReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CovidCardActionTypes.REQUEST_DATA_PENDING:
+    case CovidCardActionTypes.REQUEST_DATA_START:
       return {
         ...state,
         isPending: true,
