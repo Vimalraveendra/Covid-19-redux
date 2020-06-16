@@ -11,7 +11,7 @@
   outline: none;
   margin-top: 10px;
 }
-@media (max-width: 870px) {
+@media (max-width: 900px) {
   .selector {
     margin-bottom: 5px;
     width: 40vw;

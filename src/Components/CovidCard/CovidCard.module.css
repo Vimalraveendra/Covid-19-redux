@@ -3,14 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 .card {
   margin: 2%;
   border-radius: 5px;
-  width: 30vw;
+  width: 20vw;
   padding-bottom: 15px;
   background-color: white;
 }
@@ -63,13 +64,24 @@ h4 {
   color: rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 870px) {
+@media (max-width: 900px) {
   .container {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
   .card {
-    width: 80vw;
+    width: 60vw;
+    margin: 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .card {
+    width: 90vw;
     margin: 5%;
   }
 }
