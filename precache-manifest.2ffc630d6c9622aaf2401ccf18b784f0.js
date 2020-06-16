@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58fb8e56a77d62d8296ac3dc896d116d",
+    "revision": "91b9f09b40d39d393fa1cf5868d3e34d",
     "url": "/Covid-19-redux/index.html"
   },
   {
-    "revision": "f346884ff9b7fac83f34",
-    "url": "/Covid-19-redux/static/css/main.9f431cfa.chunk.css"
+    "revision": "867cda64f37fdc01b7c8",
+    "url": "/Covid-19-redux/static/css/main.c1b33a41.chunk.css"
   },
   {
     "revision": "d830306ccf753be550b2",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Covid-19-redux/static/js/2.1a98eafa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f346884ff9b7fac83f34",
+    "revision": "867cda64f37fdc01b7c8",
     "url": "/Covid-19-redux/static/js/main.ac2e4cee.chunk.js"
   },
   {
