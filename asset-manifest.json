@@ -5,18 +5,18 @@
     "main.js.map": "/Covid-19-redux/static/js/main.d7eb7d58.chunk.js.map",
     "runtime-main.js": "/Covid-19-redux/static/js/runtime-main.8f3dc479.js",
     "runtime-main.js.map": "/Covid-19-redux/static/js/runtime-main.8f3dc479.js.map",
-    "static/js/2.1a98eafa.chunk.js": "/Covid-19-redux/static/js/2.1a98eafa.chunk.js",
-    "static/js/2.1a98eafa.chunk.js.map": "/Covid-19-redux/static/js/2.1a98eafa.chunk.js.map",
+    "static/js/2.a6339c37.chunk.js": "/Covid-19-redux/static/js/2.a6339c37.chunk.js",
+    "static/js/2.a6339c37.chunk.js.map": "/Covid-19-redux/static/js/2.a6339c37.chunk.js.map",
     "index.html": "/Covid-19-redux/index.html",
-    "precache-manifest.bafeb25952cf603bc816ae42b08e4b2e.js": "/Covid-19-redux/precache-manifest.bafeb25952cf603bc816ae42b08e4b2e.js",
+    "precache-manifest.463df26c21e3145a1fd8763bcf860139.js": "/Covid-19-redux/precache-manifest.463df26c21e3145a1fd8763bcf860139.js",
     "service-worker.js": "/Covid-19-redux/service-worker.js",
     "static/css/main.f543405f.chunk.css.map": "/Covid-19-redux/static/css/main.f543405f.chunk.css.map",
-    "static/js/2.1a98eafa.chunk.js.LICENSE.txt": "/Covid-19-redux/static/js/2.1a98eafa.chunk.js.LICENSE.txt",
+    "static/js/2.a6339c37.chunk.js.LICENSE.txt": "/Covid-19-redux/static/js/2.a6339c37.chunk.js.LICENSE.txt",
     "static/media/App.module.css": "/Covid-19-redux/static/media/Ignis et Glacies Sharp Italic.13bc297b.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.8f3dc479.js",
-    "static/js/2.1a98eafa.chunk.js",
+    "static/js/2.a6339c37.chunk.js",
     "static/css/main.f543405f.chunk.css",
     "static/js/main.d7eb7d58.chunk.js"
   ]
