@@ -24,6 +24,7 @@ class CountrySelector extends React.Component {
     return (
       <div className={styles.container}>
         <select
+          aria-label="country picking"
           className={cx(styles.selector, styles.option)}
           onChange={(e) => {
             handleCountry(e);

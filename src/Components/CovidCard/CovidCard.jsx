@@ -16,7 +16,7 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
     <div className={styles.container}>
       <div className={cx(styles.card, styles.infected)}>
         <div className={styles.content}>
-          <h3>Infected</h3>
+          <h2>Infected</h2>
           <CountUp
             start={0}
             end={confirmed.value}
@@ -24,13 +24,13 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
             separator=","
             className={styles.count}
           />
-          <h4>{new Date(lastUpdate).toDateString()}</h4>
+          <h3>{new Date(lastUpdate).toDateString()}</h3>
           <p>Total number of confirmed cases of COVID-19</p>
         </div>
       </div>
       <div className={cx(styles.card, styles.recovered)}>
         <div className={styles.content}>
-          <h3>Recovered</h3>
+          <h2>Recovered</h2>
           <CountUp
             start={0}
             end={recovered.value}
@@ -38,13 +38,13 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
             separator=","
             className={styles.count}
           />
-          <h4>{new Date(lastUpdate).toDateString()}</h4>
+          <h3>{new Date(lastUpdate).toDateString()}</h3>
           <p>Total number of recovered cases from COVID-19</p>
         </div>
       </div>
       <div className={cx(styles.card, styles.deaths)}>
         <div className={styles.content}>
-          <h3>Deaths</h3>
+          <h2>Deaths</h2>
           <CountUp
             start={0}
             end={deaths.value}
@@ -52,7 +52,7 @@ const CovidCard = ({ data: { confirmed, deaths, recovered, lastUpdate } }) => {
             separator=","
             className={styles.count}
           />
-          <h4>{new Date(lastUpdate).toDateString()}</h4>
+          <h3>{new Date(lastUpdate).toDateString()}</h3>
           <p>Total number of deaths cases caused by COVID-19</p>
         </div>
       </div>
