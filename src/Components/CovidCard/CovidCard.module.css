@@ -50,18 +50,23 @@
   font-weight: bold;
   line-height: 1.2;
 }
-.infected h3 {
+
+h2 {
+  font-size: 1.17em;
+}
+.infected h2 {
   color: rgba(0, 0, 255, 0.5);
 }
-.recovered h3 {
+.recovered h2 {
   color: rgba(13, 140, 13, 0.89);
 }
 
-.deaths h3 {
+.deaths h2 {
   color: rgba(106, 9, 9, 0.845);
 }
-h4 {
-  color: rgba(0, 0, 0, 0.5);
+h3 {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1em;
 }
 
 @media (max-width: 900px) {
