@@ -12,7 +12,7 @@ export function* fetchedCountriesStartAsync() {
   try {
     // yield keyword is similar to await keyword its intercepts execution.
     const response = yield call(fetchCountryData);
-    console.log("reps",response)
+    console.log("reps", response);
     // oR
     //const response = yield fetchData() avoid using call effects
     // put affect is used to dispatch actions to reducer
